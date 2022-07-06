@@ -1,0 +1,179 @@
+@use "sass:math";
+//@use 'colors' as *;
+
+/* ===============
+      FUNCTIONS
+   =============== */
+/* ===============
+
+   Table of contents
+
+     1. units
+        1.1 em
+        1.2 rem
+        1.3 normalize-unit
+
+     2. variable type
+        2.1 is-css-variable
+        2.2 is-list
+        2.3 is-map
+        2.4 is-string
+
+    3. css-variable construction
+        3.1 css-var-property
+        3.2 css-var-value
+        3.3 css-var-list
+
+    4. colors
+        4.1 gradient
+
+        
+    4. string
+        4.1 str-replace
+
+   =============== */
+
+/* ==========
+   1. Unites
+   ========== */
+/// @group units
+
+// 1.1 em
+@function em($pixels, $base-font-size: 24px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($base-font-size)) {
+    $context: $base-font-size * 1px;
+  }
+
+  @return math.div($pixels, $base-font-size) * 1em;
+}
+
+// 1.2 rem
+
+@function rem($pixels, $base-font-size: 24px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($base-font-size)) {
+    $context: $base-font-size * 1px;
+  }
+
+  @return math.div($pixels, $base-font-size) * 1rem;
+}
+
+// 1.3 normalize-unit
+
+@function normalize-unit(
+  $value,
+  $relative-to: $base-font-size,
+  $unit: $base-unit
+) {
+  @if unit($value) != px {
+    @error "The normalize vertical-rhythm module only supports px inputs. The typey library is better.";
+  }
+  @if $unit == rem {
+    @return math.div($value, $base-font-size) * 1rem;
+  } @else if $unit == em {
+    @return math.div($value, $relative-to) * 1em;
+  } @else {
+    // $unit == px
+    @return $value;
+  }
+}
+
+/* ========================================================================== */
+
+/* =================
+   2. variable type
+   ================= */
+/// @group type
+/// 2. test if a variable is a specifique type (css-variable, list, map, string)
+
+@function is-css-variable($variable) {
+  @if is-string($variable) {
+    @return if(str-slice(#{$variable}, 1, 2) == --, true, false);
+  } @else {
+    @return false;
+  }
+}
+
+@function is-list($variable) {
+  @return if(type-of($variable) == list, true, false);
+}
+
+@function is-map($variable) {
+  @return if(type-of($variable) == map, true, false);
+}
+
+@function is-string($variable) {
+  @return if(type-of($variable) == string, true, false);
+}
+/* ========================================================================== */
+
+/* =============================
+   3. css-variable construction
+   ============================= */
+
+/// @group mixin
+/// @see {mixin} css-variable
+
+@function css-var-property($name, $key: null) {
+  @return if($key, --#{$name}-#{$key}, --#{$name});
+}
+
+/// @group mixin
+/// @see {mixin} css-variable
+
+@function css-var-value($value) {
+  @if is-variable($value) {
+    @return var($value);
+  } @else if is-list($value) {
+    @return css-var-list($value);
+  } @else {
+    @return $value;
+  }
+}
+
+/// @group mixin
+/// @see {mixin} css-variable
+
+@function css-var-list($values) {
+  $list: ();
+  @each $value in $values {
+    $list: append($list, css-var-value($value), comma);
+  }
+  @return $list;
+}
+/* ========================================================================== */
+
+/* ==========
+   4. colors
+   ========== */
+
+/// @group colors
+@function gradient($direction, $list) {
+  @return linear-gradient($direction, $list);
+}
+/* ========================================================================== */
+
+/* ==========
+   4. string
+   ========== */
+
+/// @group string
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}

@@ -1,0 +1,36 @@
+.hamburger {
+  height: 100%;
+  margin: auto;
+}
+
+.line {
+  --transition-props: stroke-dasharray, stroke-dashoffset;
+  --transition-duration: 0.8s;
+  --transition-timing: var(--transition-bounce);
+
+  --stroke-starting-offset: 5.5;
+  --stroke-ending-offset: 67;
+  --stroke-length: 21;
+}
+
+.hamburger.is-active {
+  .line {
+    &.line--1 {
+      --stroke-starting-offset: 59;
+      --stroke-ending-offset: 9;
+      --stroke-length: 25;
+    }
+
+    &.line--2 {
+      --stroke-starting-offset: 59;
+      --stroke-ending-offset: 9;
+      --stroke-length: 25;
+    }
+
+    &.line--3 {
+      --stroke-starting-offset: 15;
+      --stroke-ending-offset: 22;
+      --stroke-length: 0;
+    }
+  }
+}

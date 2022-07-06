@@ -1,0 +1,18 @@
+//@use 'breakpoints' as *;
+//@use "colors" as *;
+@use "functions" as *;
+@use "sass:math";
+@use "sass:list";
+@use "sass:map";
+
+/* ==============
+   3. background
+   ============== */
+
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+/* ========================================================================== */

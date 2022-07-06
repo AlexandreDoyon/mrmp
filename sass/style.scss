@@ -1,0 +1,121 @@
+@use "base";
+@use "utilities";
+@use "components";
+@use "layout";
+@use "pages";
+@use "sections";
+@use "themes";
+@use "vendors";
+
+
+/*
+FUNCTION NAMING CONVENTION
+
+get, set,
+
+add() or append(), 
+remove() or delete(), 
+refreshTable() or reloadTable(), 
+include() or require(),
+save
+
+on => when somethig happens
+Is, Can, or Has => question that return boolean  (hasName)
+
+write, assign, create, generate, load, reload, 
+
+
+
+Answers a question or provides information: 
+    .isProcessed(), names.contains("Alex")
+    Is, Can, or Has => question that return boolean  (hasName)
+
+Changes the state of the object: 
+    person.setAddress("Earth"), names.append("Victoria"), view.reloadSubviews()
+
+
+Executes a task and returns the result: 
+    name.characters.reversed(), names.sorted(), numbers.getAverage().
+
+
+
+prefix? + action (A) + high context (HC) + low context? (LC)
+
+
+const color = 'blue'
+const isBlue = (color === 'blue') // characteristic
+const isPresent = true // state
+if (isBlue && isPresent) {
+  console.log('Blue is present!')
+}
+
+
+Bad 
+const isProductsExist = (productsCount > 0)
+const areProductsPresent = (productsCount > 0)
+
+
+Good
+const hasProducts = (productsCount > 0)
+
+*/
+
+
+
+/* =================
+
+   Table of contents
+
+     1. global styles
+
+     2. typography
+
+     3. layout
+
+     4. components 
+        4.1 buttons 
+
+   ================= */
+
+/* =============
+   1. global styles
+   ============= */
+
+/* =============
+   2. typography
+   ============= */
+
+/* =============
+   3. layout
+   ============= */
+
+/* =============
+   4. components
+   ============= */
+
+   
+/* 4.1 buttons */
+
+
+
+/*
+
+
+font-size: rem
+
+width: %, (max);
+  max 45 ch, max: 75: for paragraph (p);
+	vw for specific case
+
+
+no height (or min) => % or rem);
+
+
+padding, margin => rem or em
+	rem =>	in general, outside component
+	em =>	to adjust component with specific font-size (button, flow)
+
+media-queries => em
+
+
+*/

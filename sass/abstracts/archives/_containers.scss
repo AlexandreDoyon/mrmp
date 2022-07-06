@@ -1,0 +1,11 @@
+/*
+
+$container-sizes: (
+    s: map-get($breakpoints, s) - em(30px),
+    m: map-get($breakpoints, m) - em(40px),
+    l: map-get($breakpoints, l) - em(45px),
+    xl: map-get($breakpoints, xl) - em(60px),
+    xxl: map-get($breakpoints, xxl) - em(400px)
+  ) !default;
+
+*/

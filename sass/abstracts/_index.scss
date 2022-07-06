@@ -1,0 +1,74 @@
+/* @forward "breakpoints";
+@forward "colors";
+@forward "type";
+@forward "transitions";
+*/
+
+@forward "functions";
+@forward "mixins";
+
+/*
+
+
+(P)A/HC/LC   prefix? + action (A) + high context (HC) + low context? (LC)
+
+Something
+QUESTIONS  =>  is, has, should, can
+
+
+ACTION =>   getSomething(), setSomething(), resetSomething(), handleSomething(), fetchSomething(), 
+            removeSomething(), deleteSomething(), composeSomething(), onSomething(), addSomething(), 
+            dispalaySomething(), reloadSomething(), refreshSomething(), includeSomething(), 
+            requireSomething(), saveSomething(), writeSomething(), assignSomething(), createSomething(), 
+            generateSomething(), loadSomething()
+	
+	fetch(Requests data, which takes time), 
+	remove(Removes something from somewhere.), 
+	delete(Completely erases something from the realm of existence.), 
+	compose(Creates new data from existing data. This is mostly applicable to strings, objects, or functions.)
+	reloadSomething(reload everything)
+	refreshSomething(refresh something specific)
+
+
+reversed(), sorted(), getAverage()...
+
+
+CONTEXT 
+
+A pure function operating with primitives 
+function filter(predicate, list) {
+    return list.filter(predicate)
+  }
+   Function operating exactly on posts 
+  function getRecentPosts(posts) {
+    return filter(posts, (post) => post.date === Date.now())
+  }
+  
+  Some language-specific assumptions may allow to omit the context. For example, in JavaScript it is common that filter operates on Array. Adding explicit filterArray would be unnecessary.
+ 
+
+
+  
+  NAME			            PREFIX  ACTION    HIGHT     LOW
+                                          CONTEXT   CONTEXT
+
+  getPost                       get       Post
+  
+  getPostData			              get       Post      Data
+  
+  handleClickOutside            handle    Click     Outside
+  
+  shouldDisplayMessage  should  Display   Message
+
+
+*/
+
+/// function to get a single theme  shade from $THEMES_COLORS map
+/// @param {string} $color - color name (yellow, green, turquoise, blue, violet, mauve, red, orange, brown or neutral)
+/// @param {num} $shade - shade
+/// @require {map} $THEMES_COLORS - array with all preselected themes names, colors and tones (./variables.scss)
+/// @return {color} theme color
+
+/// @example set color to background-color
+///    background-color: get-theme-color(yellow, 100);
+///    //  background-color: hsl(62, 100%, 86%);

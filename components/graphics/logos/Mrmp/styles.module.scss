@@ -1,0 +1,10 @@
+.mrmp {
+  height: 80%;
+  margin: auto;
+
+  &-svg-path {
+    fill: url(#mrmp-linear-gradient);
+    stroke: currentColor;
+    stroke-width: 5;
+  }
+}

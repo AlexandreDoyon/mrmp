@@ -1,0 +1,25 @@
+/// @type map
+/// @prop {map} $BREAKPOINTS [()] - media-queries breakpoint type
+/// @prop {length} $BREAKPOINTS.small [em] - media-queries breakpoint length
+/// @prop {length} $BREAKPOINTS.medium [em] - media-queries breakpoint length
+/*
+$BREAKPOINTS: (
+  small: 40em,
+  medium: 65em
+);
+*/
+
+/*
+
+$breakpoints: (
+    na: 0px,
+    s: em(576px),
+    m: em(768px),
+    l: em(992px),
+    xl: em(1200px),
+    xxl: em(1920px),
+    xxxl: em(2920px),
+  ) !default;
+
+
+*/

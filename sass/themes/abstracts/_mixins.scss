@@ -1,0 +1,155 @@
+@use "colors" as *;
+@use "functions" as *;
+@use "sass/abstracts/_functions.scss" as *;
+
+/* ===============
+    THEMES MIXINS
+   =============== */
+/* ===============
+
+   Table of contents
+
+     1. theme initialization
+        1.1 initialize-shade
+        1.2 initialize-color
+        1.3 initialize-theme
+
+     2. theme colors assignation
+        2.1 theme-variable 
+        2.2 theme-color 
+
+   =============== */
+
+/* =======================
+   1. theme initialization
+   ======================= */
+
+// 1.1 create a single theme shade css variable
+
+@mixin initialize-shade($color, $shade) {
+  #{theme-name($color, $shade)}: theme-color(#{$color}, $shade);
+}
+
+// 1.2 create all theme shade css variable for one color
+
+@mixin initialize-color($color, $colors-map: $THEMES_COLORS) {
+  $shades: map-get($colors-map, $color);
+  @each $shade, $x in $shades {
+    @include initialize-shade($color, $shade);
+  }
+}
+
+// 1.3 create all theme shade css variable for every colors
+
+@mixin initialize-theme($colors-map: $THEMES_COLORS) {
+  @each $color, $shades in $colors-map {
+    @include initialize-color($color);
+  }
+}
+/* ========================================================================== */
+
+/* ===========================
+   2. theme colors assignation
+   =========================== */
+
+// 2.1 use a proporty name, a color and a shade value to assign theme css var
+
+@mixin theme-variable($name, $color, $shades) {
+  @if is-map($shades) {
+    @each $key, $shade in $shades {
+      @if is-list($shade) {
+        #{css-var-property($name, $key)}: theme-list($color, $shade);
+      } @else {
+        #{css-var-property($name, $key)}: var(theme-name($color, $shade));
+      }
+    }
+  } @else if is-list($shades) {
+    #{css-var-property($name)}: theme-list($color, $shades);
+  } @else {
+    #{css-var-property($name)}: var(theme-name($color, $shades));
+  }
+}
+
+// 2.2 create all basic css varaible assignation for a unique color and color-scheme (light or dark )
+
+@mixin theme-color($color, $color-scheme: light) {
+  @if $color-scheme == light {
+    @include theme-variable(
+      color,
+      $color,
+      (
+        0: 1000,
+        1: 900,
+        2: 800,
+        3: 700,
+      )
+    );
+    @include theme-variable(
+      bg,
+      $color,
+      (
+        0: 0,
+        1: 100,
+        2: 200,
+        3: 300,
+      )
+    );
+    @include theme-variable(
+      bg-gradient,
+      $color,
+      (
+        0: (
+          0,
+          100,
+        ),
+        1: (
+          100,
+          200,
+        ),
+        2: (
+          200,
+          300,
+        ),
+      )
+    );
+  } @else if $color-scheme == dark {
+    @include theme-variable(
+      color,
+      $color,
+      (
+        0: 0,
+        1: 100,
+        2: 200,
+        3: 300,
+      )
+    );
+    @include theme-variable(
+      bg,
+      $color,
+      (
+        0: 1000,
+        1: 900,
+        2: 800,
+        3: 700,
+      )
+    );
+    @include theme-variable(
+      bg-gradient,
+      $color,
+      (
+        0: (
+          1000,
+          900,
+        ),
+        1: (
+          900,
+          800,
+        ),
+        2: (
+          800,
+          700,
+        ),
+      )
+    );
+  }
+}

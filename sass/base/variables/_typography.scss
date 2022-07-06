@@ -1,0 +1,108 @@
+:root {
+  // main-text-color
+  // theme-text-color-1
+  // theme-text-color-2
+  // theme-text-color-3
+  // theme-text-color-4
+  // theme-text-color-5
+  //
+
+  // main-background-color
+  // theme-background-color-1
+  // theme-background-color-2
+  // theme-background-color-3
+  // theme-background-color-4
+  // theme-background-color-5
+  //
+
+  // .theme-turquoise
+  // .theme-turquoise--1
+  // .theme-turquoise--2
+  // .theme-turquoise--3
+  // .theme-turquoise--4
+  // .theme-turquoise--5
+  //
+
+  // .t-turquoise--dark
+  // .t-turquoise--d1
+  // .t-turquoise--d2
+  // .t-turquoise--d3
+  // .t-turquoise--d4
+  // .t-turquoise--d5
+  //
+
+  // .theme-turquoise--light
+  // .theme-turquoise--l1
+  // .theme-turquoise--l2
+  // .theme-turquoise--l3
+  // .theme-turquoise--l4
+  // .theme-turquoise--l5
+  //
+
+  //
+
+  --ff-serif: "Alegreya";
+  --ff-sans: "Alegreya Sans", sans-serif;
+
+  --ff-normal: var(--ff-sans);
+  --ff-headings: var(--ff-serif);
+
+  --fs-normal: var(--fs-300);
+  --fs-small: var(--fs-200);
+
+  --fs-h1: var(--fs-800);
+  --fs-h2: var(--fs-700);
+  --fs-h3: var(--fs-600);
+  --fs-h4: var(--fs-500);
+
+  --fw-800: 800;
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+  --fw-400: 400;
+  --fw-300: 300;
+
+  --fw-normal: var(--fw-400);
+  --fw-lighter: var(--fw-300);
+  --fw-bold: var(--fw-500);
+  --fw-bolder: var(--fw-600);
+
+  --fw-title: var(--fw-800);
+  --fw-headings: var(--fw-700);
+
+  --fst-normal: normal;
+  --fst-italic: italic;
+
+  --line-height: 1.1;
+
+  --fs-200: 0.85rem;
+  --fs-300: 1rem;
+  --fs-400: 1.5rem;
+  --fs-500: 2rem;
+  --fs-600: 2.827rem;
+  --fs-700: 4rem;
+  --fs-800: 5.653rem;
+  --section-spacing: 7rem;
+
+  @media only screen and (min-width: 40em) {
+    --fs-200: 0.85rem;
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.563rem;
+    --fs-600: 1.953rem;
+    --fs-700: 2.441rem;
+    --fs-800: 3.052rem;
+    --section-spacing: 3.5rem;
+  }
+
+  @media only screen and (min-width: 65em) {
+    --fs-200: 0.85rem;
+    --fs-300: 1rem;
+    --fs-400: 1.5rem;
+    --fs-500: 2rem;
+    --fs-600: 2.827rem;
+    --fs-700: 4rem;
+    --fs-800: 5.653rem;
+    --section-spacing: 7rem;
+  }
+}

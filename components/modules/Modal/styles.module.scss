@@ -1,0 +1,21 @@
+.modal {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  height: 0;
+  z-index: 90;
+
+  transition: height 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.3);
+
+  &.wasActive {
+    transition-delay: 0.5s;
+  }
+
+  &.isActive {
+    visibility: visible;
+    height: 100%;
+    z-index: 95;
+    transition: height 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.3);
+  }
+}

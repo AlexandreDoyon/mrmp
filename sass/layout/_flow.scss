@@ -1,0 +1,7 @@
+.l-flow > * + * {
+  margin-top: var(--flow-spacer, 0.75em);
+}
+
+.l-flow-x > * + * {
+  margin-left: var(--flow-spacer, 0.75em);
+}

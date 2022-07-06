@@ -1,0 +1,18 @@
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-title, hsl(0, 0%, 0%));
+}
+
+p:not([class]),
+ul:not([class]),
+li:not([class]) {
+  max-width: 60ch;
+}
+
+p,
+ul,
+li {
+  color: var(--color-txt, hsl(0, 0%, 0%));
+}

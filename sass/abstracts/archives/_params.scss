@@ -1,0 +1,85 @@
+// The length unit in which to output vertical rhythm values.
+// Supported values: px, em, rem.
+$base-unit: "em" !default;
+
+// The font size set on the root html element.
+$base-font-size: 16px !default;
+
+// The base line height determines the basic unit of vertical rhythm.
+$base-line-height: 1.5em !default;
+
+// The default font family.
+
+$FONT-FAMILY: (
+  body: Alegreya,
+  headings: Alegreya Sans,
+  buttons: Alegreya Sans,
+);
+
+$base-font-family: Alegreya !default;
+$base-headings-font-family: Alegreya Sans !default;
+$base-font-family: Alegreya !default;
+$base-headings-font-family: Alegreya Sans !default;
+
+$FONT-SIZE-RATIO: (
+  h1: 4,
+  h2: 3,
+  h3: 2,
+  h4: 1.5,
+  h5: 1,
+  h6: 0.75,
+);
+
+$base-bg: #ffffff !default;
+$base-text: #000000 !default;
+$base-border: rgba(black, 0.08) !default;
+$base-gradient: $base-bg, darken($base-bg, 2%) !default;
+
+$hovered-bg: #ededed !default;
+$focused-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.13) !default;
+$selected-bg: $primary !default;
+$disabled-opacity: 0.6 !default;
+
+/*
+
+
+
+  $font-size	        The base font size across all components.
+  $font-family	        The font family across all components.
+  $line-height	        The line height used along with $font-size.
+  $border-radius	    The border radius for all components.
+  
+  $primary	            The color that focuses the user attention. Used for primary buttons and for elements of primary importance across the theme.
+  
+  $base-text	        The text color of the components' chrome area.
+  $base-bg	            The background of the components' chrome area.
+  $base-border	        The border color of the components' chrome area.
+  $base-gradient	    The gradient background of the components' chrome area.
+
+
+
+  $hovered-text	        The text color of hovered items.
+  $hovered-bg	        The background of hovered items.
+  $hovered-border	    The border color of hovered items.
+  $hovered-gradient	    The gradient background of hovered items.
+
+
+
+  $selected-text	    The text color of selected items.
+  $selected-bg	        The background of selected items.
+  $selected-border	    The border color of selected items.
+  $selected-gradient	The gradient background of selected items.
+
+  $disabled-opacity	    The opacity of disabled items.
+
+
+
+  $error	            The color for error messages and states.
+  $warning	            The color for warning messages and states.
+  $success	            The color for success messages and states.
+  $info	                The color for informational messages and states.
+
+
+
+
+*/

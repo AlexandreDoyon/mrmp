@@ -1,0 +1,20 @@
+@use "sass/themes/abstracts" as *;
+
+.theme-dark {
+  --color-background-1: var(--color-black, hsl(0, 0%, 0%));
+  --color-background-2: var(--color-black, hsl(0, 0%, 10%));
+  --color-background-3: var(--color-black, hsl(0, 0%, 20%));
+
+  --color-title: hsl(0, 0%, 100%);
+  --color-txt: hsl(0, 0%, 0%);
+}
+
+.theme-violet.theme-dark {
+  --color-background-1: hsl(0, 0%, 0%);
+  --color-background-2: hsl(240, 25%, 15%);
+  --color-background-3: hsl(240, 31%, 24%);
+
+  --color-txt-1: hsl(0, 0%, 100%);
+  --color-txt-2: hsl(238, 24%, 88%);
+  --color-txt-3: hsl(238, 24%, 78%);
+}

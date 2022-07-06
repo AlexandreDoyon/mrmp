@@ -1,0 +1,344 @@
+@use "sass:color";
+
+//.button {
+
+/*
+    --cursor:
+    --padding:
+    --border:
+    --radius:
+    --fw:
+    --color:
+    --bg:
+
+    --color-hover:
+    --bg-hover:
+*/
+
+[class^="c-button"],
+[class*="c-button"] {
+  display: inline-block;
+  text-decoration: none;
+
+  padding: var(--padding, 0.95em 1.75em 0.85em);
+  cursor: var(--cursor, pointer);
+  border: var(--border, 0);
+  border-radius: var(--radius, 100vw);
+
+  font-weight: var(--fw, 500);
+  color: var(--color, #fff);
+  background-color: var(--bg, hsl(211, 100%, 50%));
+
+  &:hover,
+  &:focus {
+    color: var(--color-hover, hsl(210, 17%, 98%));
+    background-color: var(--bg-hover, hsl(211, 100%, 40%));
+  }
+}
+
+.c-button-secondary {
+  --color-text: var(--color-light);
+  --color-bg: var(--color-secondary);
+  --color-text-hover: var(--color-secondary);
+  --color-bg-hover: var(--color-light);
+}
+/*
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn-primary{
+
+    &:disabled {
+
+    }
+
+    &:not(:disabled):not(.disabled).active {
+
+    }
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-secondary {
+
+    &:disabled {
+        
+    }
+
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-success {
+    
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-danger {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-warning {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-info {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-light {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-dark {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-link {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-primary{
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-secondary {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-success {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-danger {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-warning {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-info {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-light {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-dark {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-outline-link {
+        
+    &:disabled {
+        
+    }
+    
+    &:not(:disabled):not(.disabled).active {
+        
+    }
+    
+    &:hover,
+    &:focus {
+
+    }
+}
+
+.btn-group {
+
+} 
+
+.btn-group-toggle {
+
+}
+*/

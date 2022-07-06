@@ -1,0 +1,39 @@
+[class*="l-container"] {
+  width: min(100% - var(--padding, 2rem), var(--max-width, 60rem));
+}
+
+.l-container {
+  &-narrow {
+    --max-width: 40rem;
+    --padding: 30px;
+  }
+
+  &-wide {
+    --max-width: 80rem;
+  }
+
+  &-extra-wide {
+    --max-width: 109rem;
+  }
+
+  &-full {
+    --max-width: 100%;
+  }
+
+  &-viewport {
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+.l-center-margin {
+  margin: 0 auto;
+}
+
+.l-center {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  padding-left: 30px;
+  padding-right: 30px;
+}

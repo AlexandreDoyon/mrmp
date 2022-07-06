@@ -1,0 +1,41 @@
+[class*="l-flex"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.l-flex {
+  &-justify {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  &-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  &-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
+  &-column {
+    flex-direction: column;
+  }
+
+  &-vertical-end {
+    align-items: flex-end;
+  }
+}
+
+/*
+
+
+flex-direction: row | row-reverse | column
+
+
+*/

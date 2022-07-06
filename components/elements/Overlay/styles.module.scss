@@ -1,0 +1,10 @@
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  &.theme-turquoise-dark-1 {
+    background: linear-gradient(90deg, #00354a 0%, hsl(190deg, 50%, 30%) 100%);
+  }
+}

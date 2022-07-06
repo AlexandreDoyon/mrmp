@@ -1,0 +1,59 @@
+@use "colors" as *;
+
+/* ==================
+    THEMES FUNCTIONS
+   ================== */
+/* ==================
+
+   Table of contents
+
+     1. theme-color
+
+     2. theme construction
+        2.1 theme-list 
+        2.2 theme-name 
+
+   ================== */
+
+/* ===============
+   1. theme-color
+   =============== */
+
+// get a themes map ($THEMES_COLORS) and find a specifique color shade in it
+
+@function theme-color($color, $shade, $colors-map: $THEMES_COLORS) {
+ 
+  //0 and 1000 are neutrals, if so, get a neutral shade and color
+  @if $shade == 0 or $shade == 1000 {
+    $color: neutral;
+  } 
+
+  // get a color shade of not white or black (shade of 0, 1000)
+  @return map-get(map-get($colors-map, $color), $shade);
+}
+/* ========================================================================== */
+
+/* ======================
+   2. theme construction
+   ====================== */
+
+// 2.1 transforme a color and a shade values to a valid css variable name
+
+@function theme-name($color, $shade) {
+  @return if(
+    $shade == 0 or $shade == 1000,
+    --color-neutral-#{$shade},
+    --color-#{$color}-#{$shade}
+  );
+}
+
+// 2.2 transforme a invalide list of multiple shades to one valid value
+
+@function theme-list($color, $shades) {
+  $value: ();
+  @each $shade in $shades {
+    $value: append($value, var(theme-name($color, $shade)), comma);
+  }
+  @return $value;
+}
+/* ========================================================================== */

@@ -1,0 +1,31 @@
+.u-transition {
+  transition-property: var(--transition-props);
+  transition-duration: var(--transition-duration, 1s);
+  transition-timing-function: var(--transition-timing, linear);
+  transition-delay: var(--transition-delay, 0);
+}
+
+.u-fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.u-fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.u-stroke-animation {
+  stroke-dashoffset: 1;
+  stroke-dasharray: 0 var(--stroke-starting-offset) var(--stroke-length)
+    var(--stroke-ending-offset);
+
+  fill: none;
+  stroke: var(--stroke-color, currentcolor);
+  stroke-width: var(--stroke-width, 3);
+  stroke-linecap: var(--stroke-line, round);
+  stroke-linejoin: var(--stroke-line, round);
+}

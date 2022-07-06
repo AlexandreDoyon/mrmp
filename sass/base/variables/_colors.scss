@@ -1,0 +1,29 @@
+/* ===========================
+
+============================== */
+
+:root {
+  --color-primary: hsl(211, 100%, 50%);
+  --color-secondary: hsl(208, 7%, 46%);
+
+  --color-success: hsl(134, 61%, 41%);
+  --color-danger: hsl(354, 70%, 54%);
+  --color-warning: hsl(45, 100%, 51%);
+  --color-info: hsl(188, 78%, 41%);
+
+  --color-light: hsl(210, 17%, 98%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-dark: hsl(210, 10%, 23%);
+  --color-black: hsl(0, 0%, 0%);
+
+  --color-title: hsl(0, 0%, 0%);
+  --color-txt: hsl(0, 0%, 0%);
+
+  --color-link: hsl(217, 87%, 75%);
+  --color-hover: hsl(217, 87%, 75%);
+  --color-visited: hsl(272, 90%, 76%);
+
+  --color-background-1: var(--color-black, hsl(0, 0%, 100%));
+  --color-background-2: var(--color-black, hsl(0, 0%, 90%));
+  --color-background-3: var(--color-black, hsl(0, 0%, 80%));
+}

@@ -1,0 +1,21 @@
+.u-effect-blur {
+  backdrop-filter: blur(10px);
+}
+
+[class*="u-filter-blur"] {
+  backdrop-filter: blur(var(--blur, 10px));
+}
+
+/*
+ --ho:
+ --vo:
+ --blur
+ --spread
+ --color
+ --opacity
+*/
+
+[class*="u-box-shadow"] {
+  box-shadow: var(--ho, 0) var(--vo, 0) var(--blur, 1rem) var(--spread, 0)
+    var(--color, rgb(0 0 0 / var(--opacity, 0.25)));
+}

@@ -1,0 +1,8 @@
+$TRANSITIONS: (
+    transition: (
+        spring-1: 0.8s cubic-bezier(0.645, 0.045, 0.355, 1.3),
+    ),
+    timing-function: (
+        spring:   cubic-bezier(0.645, 0.045, 0.355, 1.5),
+    ),
+) !default;
